@@ -12,6 +12,7 @@
     "@icon-park/vue-next": "^1.4.2",
     "axios": "^1.6.8",
     "element-plus": "^2.6.3",
+    "howler": "^2.2.4",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "pinia": "^2.1.7",

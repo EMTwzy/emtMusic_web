@@ -38,7 +38,9 @@
       <page-compontent style="margin-top:3rem;"></page-compontent>
     </div>
 
-</div>
+  </div>
+  <!-- 播放控制器 -->
+  <musicPlay></musicPlay>
 <footer-compontent></footer-compontent>
 </template>
 
@@ -46,10 +48,11 @@
 // 导入vue基本
 import { ref, onMounted, computed,watch } from "vue";
 import { useIndexStore } from "../pinia/index";
-// 导入音乐列表组件、导入页数控制器、底部声明
+// 导入音乐列表组件、导入页数控制器、底部声明、底部播放组件
 import musicItem from "../components/musicItem.vue";
 import pageCompontent from '../components/pageCompontent.vue';
 import footerCompontent from '../components/footerCompontent.vue';
+import musicPlay from '../components/musicPlay.vue';
 //导入interface
 import itemI from "../interface/itemInterface";
 // 使用loading

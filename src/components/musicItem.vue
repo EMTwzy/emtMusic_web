@@ -6,7 +6,7 @@
         <!-- 如果当前组件被选中，就出现控制选项-->
         <div class="musicController"  v-show="isHover">
             <el-tooltip class="box-item" effect="dark" content="播放" placement="bottom">
-                <play-one theme="outline" size="30" fill="#c662ff" />
+                <play-one theme="outline" size="30" fill="#c662ff" @click="selectMusic(data.obj.id)"/>
             </el-tooltip>
             <el-tooltip class="box-item" effect="dark" content="下载" placement="bottom">
                 <download-four theme="outline" size="30" fill="#c662ff" />
@@ -16,10 +16,10 @@
 </template>
 
 <script setup lang='ts'>
-import { defineProps, ref } from 'vue';
+import { defineProps, ref,computed } from 'vue';
 import { itemI } from '../interface/itemInterface';
 import {PlayOne,DownloadFour} from '@icon-park/vue-next';
-
+import {useIndexStore} from '../pinia/index.ts';
 
 //接收数据
 const data = defineProps<{
@@ -30,7 +30,17 @@ const data = defineProps<{
 
 const isHover = ref(false);
 
-
+//使用pinia
+const useIndex=useIndexStore();
+const id=computed(()=>useIndex.id);
+// 选择音乐
+async function selectMusic(ids:number){
+    if(id.value==ids);
+    else{
+        useIndex.id=ids;
+        await useIndex.updateItem();
+    }
+}
 
 </script>
 
@@ -60,7 +70,7 @@ const isHover = ref(false);
         position: absolute;
 
         box-item {
-            padding-left:2rem ;
+            margin-left:2rem ;
         }
 
         ::v-deep .i-icon {

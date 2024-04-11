@@ -22,3 +22,14 @@ export const searchMusic=async(word:string,page:number):itemI=>{
         throw error;
     }
 }
+
+// 根据id获取播放数据
+export const searchById=async(id:number,q:number)=>{
+    try{
+        let res=await http('/api/Tencent',{id,q});
+        console.log('@searchById',res);
+        return res;
+    }catch(error){
+        throw error;
+    }
+}
