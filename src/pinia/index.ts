@@ -43,7 +43,7 @@ export const useIndexStore = defineStore('index', {
                 this.itemsList = res.data;
 
             } catch (error) {
-                throw error;
+                console.error('search错误');
             }
         },
         //综合查询
@@ -56,7 +56,7 @@ export const useIndexStore = defineStore('index', {
                 //再录入数据
                 this.itemsList = res.data;
             } catch (error) {
-                throw error;
+                console.error('获取错误');
             }
         },
 
@@ -92,7 +92,7 @@ export const useIndexStore = defineStore('index', {
                 this.item=res.data;
                 console.log('看看pinia这边的数据值',res.data);
             }catch(error){
-                throw error;
+                console.error('update错误');
             }
         }
 

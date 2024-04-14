@@ -44,7 +44,7 @@ export const http = async <T>(url: string, data?: any): Promise<T> => {
 
         }
         // 抛出错误  
-        throw error;
+        console.error('出现错误!');
     } finally {
         useIndexStore().useLoading();
     }

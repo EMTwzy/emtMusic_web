@@ -9,7 +9,7 @@
                 <play-one theme="outline" size="30" fill="#c662ff" @click="selectMusic(data.obj.id)"/>
             </el-tooltip>
             <el-tooltip class="box-item" effect="dark" content="下载" placement="bottom">
-                <download-four theme="outline" size="30" fill="#c662ff" />
+                <download-four theme="outline" size="30" fill="#c662ff" @click="downMusic(data.obj.id)"/>
             </el-tooltip>
         </div>
     </div>
@@ -20,6 +20,8 @@ import { defineProps, ref,computed } from 'vue';
 import { itemI } from '../interface/itemInterface';
 import {PlayOne,DownloadFour} from '@icon-park/vue-next';
 import {useIndexStore} from '../pinia/index.ts';
+import {downLoad} from '../utils/download';
+import {searchById} from '../api/index';
 
 //接收数据
 const data = defineProps<{
@@ -40,6 +42,13 @@ async function selectMusic(ids:number){
         useIndex.id=ids;
         await useIndex.updateItem();
     }
+}
+
+//下载音乐
+async function downMusic(ids:number){
+    let res=await searchById(ids,9);
+    console.log("看看downMusic",res.data);
+    downLoad(res.data.url,res.data.song,res.data.singer);
 }
 
 </script>

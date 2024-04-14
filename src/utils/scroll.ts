@@ -3,7 +3,7 @@ export const scrollEvent = () => {
         var component = document.querySelector('.musicPlay');
         var viewportHeight = window.innerHeight;
         var componentHeight = component.offsetHeight;
-        var initialBottom = 1; // 组件距离页面底部的初始距离（单位：rem）  
+        var initialBottom = 5; // 组件距离页面底部的初始距离（单位：rem）  
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         var documentHeight = document.documentElement.scrollHeight;
 

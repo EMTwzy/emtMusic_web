@@ -30,7 +30,7 @@ var footerTop = document.querySelector('.content').offsetTop; // footerComponent
 .footer {
   width: 100%;
   height: 5rem;
-  position: relative;
+  position: fixed;
   bottom:0;
   background-color: rgba(0, 0, 0, 0.7);
   text-align: center;

@@ -84,7 +84,7 @@ const loading = computed(() => useIndex.loading);
 
 /*主页*/
 .index {
-    height: 190vh;
+    height: 200vh;
   /*搜索区*/
   .search {
     width: @boxWidth;
