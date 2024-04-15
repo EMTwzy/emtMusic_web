@@ -78,12 +78,9 @@ async function downMusic(ids:number){
         line-height: 5rem;
         position: absolute;
 
-        box-item {
-            margin-left:2rem ;
-        }
-
         ::v-deep .i-icon {
             cursor: pointer;
+            margin-left:0.5rem ;
         }
 
         ::v-deep .i-icon:hover {
